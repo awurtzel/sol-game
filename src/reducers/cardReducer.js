@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import {FETCH_CARD, RECEIVE_CARD} from "../actions/actionTypes";
+import {FETCH_CARD, RECEIVE_CARD} from '../actions/allActions';
 
 export default function card(state = initialState.card, action) {
     let newState;

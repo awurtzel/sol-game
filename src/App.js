@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
-import {Provider} from "react-redux";
-import configureStore from "./store/configureStore";
-import CardList from "./components/CardList";
-
-const store = configureStore();
+import CardList from './components/cardList'
 
 class App extends Component {
     render() {
         return (
-            <Provider store={store}>
-                <CardList/>
-            </Provider>,
-            document.getElementById('app')
+            <div className="app">
+                <CardList />
+            </div>
         );
     }
 }
 
 export default App;
-
-//<div className="App">
-//    <h1 className="App-title">Welcome to React bitches</h1>
-//</div>

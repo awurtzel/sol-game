@@ -1,28 +1,29 @@
-import * as types from './actionTypes';
+import * as allActions from './allActions';
 
-function url() {
-    return 'www.url.com'
-}
-
-export function receiveCard(json) {
-    return {
-        type: types.RECEIVE_CARD,
-        card: json.card,
-    }
+export function receiveCard(data) {
+    return {type: allActions.RECEIVE_CARD, card: data};
 }
 
 export function fetchCard() {
-    return dispatch => {
-        return fetch(url(), {
-            method: 'GET',
-            mode: 'cors',
-            credentials: 'include',
-            headers: {
-                'x-api-key': null, //apiKey
-                'Accept': 'application/json'
+    return (dispatch) => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response =>
+            response.json().then(data => ({
+                data: data,
+                status: response.status
+            }))
+        )
+        .then(response => {
+            if(response.status === 200){
+                dispatch(receiveCard(response.data))
+            }else{
+                const flash = {
+                    type: 'error',
+                    title: 'Error getting task list',
+                    content: 'There was an error getting the task list. Please try again.'
+                };
+                dispatch({type: "DISPLAY_FLASH", data: flash})
             }
-        })
-        .then(response => response.json())
-        .then(json => dispatch(receiveCard(json)));
+        });
     };
 }
