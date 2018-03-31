@@ -1,8 +1,10 @@
 Feature - Save and Load Cards
 
 Stories:
+X Controller (redux)
+Endpoint/microservice (java/javascript/tomcat/aws)
 Define Card (model)
 Card Schema in database (aws? oracle? sql?)
 Save and load card from database into model (hibernate?)
 Card creation frontend (react view)
-Controller/integration (redux)
+Integration (?)
