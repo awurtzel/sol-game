@@ -1,7 +1,8 @@
-{
-  "cards": [
-    {
-      "name": "Europaen Underdweller"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Europaen Underdweller",
+    "type": "Squad",
+    "faction": "Europa"
+  }
+]
