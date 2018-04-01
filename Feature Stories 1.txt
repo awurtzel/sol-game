@@ -2,9 +2,10 @@ Feature - Save and Load Cards
 
 Stories:
 X Controller (redux)
-JSON File I/O for In Memory repository (json)
-Define Card (controller)
-Display in memory repo in view with GUI (model)
+X JSON File I/O for In Memory repository (json) - NOT POSSIBLE
+X Display in inMemoryRepo in view without GUI (model)
+Define Card (redux)
+Display in simple repo in view with GUI (model)
 Endpoint/microservice (java/javascript/tomcat/aws)
 Card Schema in database (aws? oracle? sql?)
 Save and load card from database into model (hibernate?)

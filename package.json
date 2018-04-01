@@ -6,7 +6,6 @@
     "buffer": "^5.1.0",
     "create-react-app": "^1.5.2",
     "eslint": "^4.19.1",
-    "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-scripts": "1.1.1",
     "prop-types": "latest"
@@ -19,8 +18,11 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.7.0",
+    "json-loader": "^0.5.7",
+    "react": "^16.3.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "s3cmd": "^1.1.0"
   }
 }

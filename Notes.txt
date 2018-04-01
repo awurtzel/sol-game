@@ -1,0 +1,13 @@
+S3 Link:
+http://sol-game.s3-website.us-east-2.amazonaws.com/
+
+CardTable Stream ARN:
+arn:aws:dynamodb:us-east-2:076295302683:table/CardTable/stream/2018-04-01T14:45:42.766
+
+aws lambda create-event-source-mapping \
+--region us-east-1 \
+--function-name ProcessDynamoDBStream \
+--event-source arn:aws:dynamodb:us-east-2:076295302683:table/CardTable/stream/2018-04-01T14:45:42.766 \
+--batch-size 100 \
+--starting-position TRIM_HORIZON \
+--profile adminuser

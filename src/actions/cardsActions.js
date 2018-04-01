@@ -1,12 +1,12 @@
 import * as allActions from './allActions';
 
 export function receiveCard(data) {
-    return {type: allActions.RECEIVE_CARD, card: data};
+    return {type: allActions.RECEIVE_CARD, cards: data.cards};
 }
 
 export function fetchCard() {
     return (dispatch) => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('https://api.myjson.com/bins/18y6bb')
         .then(response =>
             response.json().then(data => ({
                 data: data,

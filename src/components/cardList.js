@@ -1,31 +1,23 @@
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as cardActions from '../actions/cardActions';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React from "react";
 
 class cardList extends React.Component {
-    componentWillMount() {
-        this.props.cardActions.fetchCard();
-    }
-
     renderData(item) {
-        return <div key={item.id}>{item.name}</div>;
+        return <div key={item.id}>Name: '{item.name}', Type: {item.type}, Faction: '{item.faction}'</div>;
     }
 
     render() {
-        if(!this.props.card){
+        if (!this.props.cards) {
             return (
                 <div>
                     Loading Card...
                 </div>
             )
-        }else{
+        } else {
             return (
                 <div className="">
                     Card List:
                     {
-                        this.props.card.map((item, index) => {
+                        this.props.cards.map((item, index) => {
                             return (
                                 this.renderData(item)
                             );
@@ -36,25 +28,3 @@ class cardList extends React.Component {
         }
     }
 }
-
-cardList.propTypes = {
-    cardActions: PropTypes.object,
-    card: PropTypes.array
-};
-
-function mapStateToProps(state) {
-    return {
-        card: state.card
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        cardActions: bindActionCreators(cardActions, dispatch)
-    };
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(cardList);
