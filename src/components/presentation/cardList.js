@@ -1,12 +1,12 @@
 import React from "react";
 
-class cardList extends React.Component {
-    renderData(item) {
+const CardList = (props) => {
+    function drawItem(item) {
         return <div key={item.id}>Name: '{item.name}', Type: {item.type}, Faction: '{item.faction}'</div>;
     }
 
-    render() {
-        if (!this.props.cards) {
+    function draw() {
+        if (!props.cards) {
             return (
                 <div>
                     Loading Card...
@@ -17,9 +17,9 @@ class cardList extends React.Component {
                 <div className="">
                     Card List:
                     {
-                        this.props.cards.map((item, index) => {
+                        props.cards.map((item, index) => {
                             return (
-                                this.renderData(item)
+                                drawItem(item)
                             );
                         })
                     }
@@ -27,4 +27,12 @@ class cardList extends React.Component {
             )
         }
     }
-}
+
+    return(
+        <div>
+            {draw()}
+        </div>
+    );
+};
+
+export default CardList;

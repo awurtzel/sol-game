@@ -4,8 +4,9 @@ Stories:
 X Controller (redux)
 X JSON File I/O for In Memory repository (json) - NOT POSSIBLE
 X Display in inMemoryRepo in view without GUI (model)
+X Container Component and Presentation Component (redux)
+Display 1 card in card view (view)
 Define Card (redux)
-Display in simple repo in view with GUI (model)
 Endpoint/microservice (java/javascript/tomcat/aws)
 Card Schema in database (aws? oracle? sql?)
 Save and load card from database into model (hibernate?)
