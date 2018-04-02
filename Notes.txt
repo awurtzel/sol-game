@@ -1,5 +1,7 @@
 S3 Link:
 http://sol-game.s3-website.us-east-2.amazonaws.com/
+Elastic Beanstalk Link:
+http://sol-game-env.us-east-2.elasticbeanstalk.com/
 
 CardTable Stream ARN:
 arn:aws:dynamodb:us-east-2:076295302683:table/CardTable/stream/2018-04-01T14:45:42.766
